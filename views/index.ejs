@@ -28,218 +28,41 @@
 
 <% include nav %>
 
-<hr>
-<img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-     height="500px">
-<hr>
+<div class="row row-cols-3 mt-4">
+    <% for(var i = 0; i < data.length; i++){ %>
+    <div class="col text-center">
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
+        <img class="img-thumbnail" src="<%= data[i].content %>">
+        <p class="card-text" style="text-align: left"><%= data[i].email %></p>
+        <p class="card-text" style="text-align: left"><%= data[i].sdt %></p>
+        <div class="d-flex justify-content-between align-items-center" >
+            <div class="btn-group">
+                <button type="submit" class="btn btn-sm btn-outline-secondary"  >View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
+            <small class="text-muted">9 mins</small>
         </div>
     </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
+    <% } %>
 
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"
-                 height="250px">
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+<!--    <div class="col">-->
+<!--        <div class="card shadow-sm">-->
+<!--            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" style="object-fit: cover;" width="100%"-->
+<!--                 height="250px">-->
+<!--            <div class="card-body">-->
+<!--                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional-->
+<!--                    content. This content is a little bit longer.</p>-->
+<!--                <div class="d-flex justify-content-between align-items-center">-->
+<!--                    <div class="btn-group">-->
+<!--                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>-->
+<!--                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
+<!--                    </div>-->
+<!--                    <small class="text-muted">9 mins</small>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 <div class="container my-5">
     <!-- Footer -->
@@ -256,12 +79,12 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">
-                            Company name
+                           Hình Nền
                         </h6>
                         <p>
-                            Here you can use rows and columns to organize your footer
-                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit.
+                            Trang web này sẽ luôn cung cấp cho các bạn những hình nền điện thoại đẹp và
+                            theo xu hướng mới nhất. Hình nền điện thoại được lựa chọn từ nhiều nguồn khác nhau và
+                            chọn lọc kĩ càng với chất lượng tốt nhất.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -294,10 +117,9 @@
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                        <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                        <p><i class="fas fa-home mr-3"></i>Hà Nội</p>
+                        <p><i class="fas fa-envelope mr-3"></i> kientvph17296@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i>0865413253</p>
                     </div>
                     <!-- Grid column -->
 
@@ -308,7 +130,7 @@
                         <!-- Facebook -->
                         <a class="btn btn-primary btn-floating m-1"
                            style="background-color: #3b5998"
-                           href="#!"
+                           href="https://www.facebook.com/profile.php?id=100028977172269"
                            role="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-facebook" viewBox="0 0 16 16">
@@ -366,10 +188,7 @@
                 class="text-center p-3"
                 style="background-color: rgba(0, 0, 0, 0.2)"
         >
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/"
-            >MDBootstrap.com</a
-            >
+           kientvph17296
         </div>
         <!-- Copyright -->
     </footer>

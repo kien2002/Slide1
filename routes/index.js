@@ -24,34 +24,20 @@ router.get('/', function (req, res, next) {
     //         console.log(url_data[0].url);
     //         console.log(titles[0].title);
     //     }
-        res.render('index', {title: 'Express'});
+    Student.find({}, function (err, data) {
+        res.render('index', {title: 'Express', data: data});
     });
+})
 router.get('/asia', function (req, res) {
     console.log('asia')
-    Student.find({},function (err,data){
-        res.render('asia', {title: 'Asia',data:data});
+    Student.find({}, function (err, data) {
+        res.render('asia', {title: 'Asia', data: data});
     })
 
 })
 router.get('/asia', function (req, res) {
     console.log('asia')
     res.render('category', {title: 'Asia'});
-})
-router.get('/euro', function (req, res) {
-    console.log('euro')
-    res.render('euro', {title: 'Euro'});
-})
-router.get('/euro', function (req, res) {
-    console.log('euro')
-    res.render('category', {title: 'Euro'});
-})
-router.get('/america', function (req, res) {
-    console.log('america')
-    res.render('america', {title: 'America'});
-})
-router.get('/america', function (req, res) {
-    console.log('america')
-    res.render('category', {title: 'America'});
 })
 
 router.get('/about', function (req, res) {
@@ -62,9 +48,14 @@ router.get('/sua', function (req, res) {
     console.log('about')
     res.render('sua', {title: 'Sửa', message: ''});
 })
+router.get('/xoa', function (req, res) {
+    console.log('about')
+    res.render('xoa', {title: 'Xóa', message: ''});
+})
+
 router.get('/ALL', function (req, res) {
-   Student.find({},function (err,data){
-       res.send(data);
+    Student.find({}, function (err, data) {
+        res.send(data);
     })
 })
 
@@ -106,14 +97,15 @@ router.post('/update', async (req, res) => {
     });
     res.render('sua', {title: 'Sửa Ảnh', message: "Sửa Thành Công !!"})
 });
-// router.post('/delete', async function (req, res) {
-//     var email = req.body.email;
-//     console.log(email);
-//     const filter = {email: email};
-//     let xoa = await Student.findOneAndDelete(filter, function (error) {
-//         console.log(error);
-//         console.log("Xoa thanh cong !");
-//     })
-//     res.render('about', {title: 'About', message: "Update thanh cong !!"})
-// })
+router.post('/delete', async function (req, res) {
+    var email = req.body.email;
+    console.log(email);
+    const filter = {email : email};
+    let xoa = await Student.deleteOne(filter, function (error) {
+        console.log(error)
+        console.log("xoa thành công")
+    })
+    await xoa.clone();
+    res.render('xoa', {title: 'About', message: "Xóa thành công !!"})
+})
 module.exports = router;
