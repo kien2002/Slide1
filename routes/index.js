@@ -52,7 +52,16 @@ router.get('/xoa', function (req, res) {
     console.log('about')
     res.render('xoa', {title: 'Xóa', message: ''});
 })
-
+router.get('/xemanh', function (req, res) {
+    console.log('about')
+    Student.find({}, function (err, data) {
+        res.render('xemanh', {title: 'Xem Ảnh', data: data});
+    })
+})
+router.get('/xemanh', function (req, res) {
+    console.log('about')
+    res.render('xemanh', {title: 'Xem Ảnh', message: ''});
+})
 router.get('/ALL', function (req, res) {
     Student.find({}, function (err, data) {
         res.send(data);
