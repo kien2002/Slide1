@@ -101,11 +101,13 @@ router.post('/delete', async function (req, res) {
     var email = req.body.email;
     console.log(email);
     const filter = {email : email};
-    let xoa = await Student.deleteOne(filter, function (error) {
-        console.log(error)
-        console.log("xoa thành công")
-    })
-    await xoa.clone();
-    res.render('xoa', {title: 'About', message: "Xóa thành công !!"})
+    const checkTT = await Student.findOne(filter);
+    console.log(checkTT);
+    let xoa = await Student.deleteOne({_id:checkTT._id});
+    if (!xoa){
+        return console.log("Error");
+    }
+    console.log("Success");
+    return res.render('xoa', {title: 'About', message: "Xóa thành công !!"})
 })
 module.exports = router;
