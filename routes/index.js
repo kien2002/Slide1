@@ -8,9 +8,6 @@ mongoose.connect(db).catch(error => {
     console.log("co loi xay ra")
 });
 const e = require("express");
-
-/* GET home page. */
-
 //upload ảnh
 router.get('/', function (req, res, next) {
     // fs.readFile('./Data/data.txt', {encoding: 'utf8'}, (err, data) => {
@@ -54,17 +51,19 @@ router.get('/xoa', function (req, res) {
 })
 router.get('/xemanh', function (req, res) {
     console.log('about')
-    Student.find({}, function (err, data) {
-        res.render('xemanh', {title: 'Xem Ảnh', data: data});
-    })
-})
-router.get('/xemanh', function (req, res) {
-    console.log('about')
     res.render('xemanh', {title: 'Xem Ảnh', message: ''});
 })
 router.get('/ALL', function (req, res) {
     Student.find({}, function (err, data) {
         res.send(data);
+    })
+})
+router.post('/xemchitiet', function (req, res) {
+    var id = req.body.id;
+    Student.findById(id, (err, data) => {
+        res.render("xemanh", {data: data})
+        // console.log(data)
+        // console.log(id)
     })
 })
 

@@ -31,20 +31,21 @@
 <div class="row row-cols-3 mt-4">
     <% for(var i = 0; i < data.length; i++){ %>
         <div  class="col text-center">
-            <a href="xemanh"><img class="img-thumbnail" src="<%= data[i].content %>"></a>
+            <img class="img-thumbnail" src="<%= data[i].content %>">
 
             <p class="card-text" style="text-align: left"><%= data[i].email %></p>
             <p class="card-text" style="text-align: left"><%= data[i].sdt %></p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
+                    <form method="post" action="/xemchitiet">
+                        <input hidden name="id" value="<%= data[i]._id%>">
                     <button type="submit" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </form>
                 </div>
                 <small class="text-muted">9 mins</small>
             </div>
         </div>
     <% } %>
-
 </div>
 <!--    <div class="col">-->
 <!--        <div class="card shadow-sm">-->
