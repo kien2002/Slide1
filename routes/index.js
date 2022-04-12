@@ -55,6 +55,8 @@ router.get('/xemanh', function (req, res) {
     res.render('xemanh', {title: 'Xem Ảnh', message: ''});
 })
 router.get('/getALL', function (req, res) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET');
     Student.find({}, function (err, data) {
         res.send(data);
     })
