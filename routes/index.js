@@ -25,12 +25,7 @@ router.get('/', function (req, res, next) {
         res.render('index', {title: 'Express', data: data});
     });
 })
-router.get('/', function (req, res, next) {
 
-    Student.find({}, function (err, data) {
-        res.send(data);
-    });
-})
 router.get('/asia', function (req, res) {
     console.log('asia')
     Student.find({}, function (err, data) {
@@ -59,7 +54,7 @@ router.get('/xemanh', function (req, res) {
     console.log('about')
     res.render('xemanh', {title: 'Xem Ảnh', message: ''});
 })
-router.get('/ALL', function (req, res) {
+router.get('/getALL', function (req, res) {
     Student.find({}, function (err, data) {
         res.send(data);
     })
