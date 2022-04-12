@@ -25,6 +25,12 @@ router.get('/', function (req, res, next) {
         res.render('index', {title: 'Express', data: data});
     });
 })
+router.get('/', function (req, res, next) {
+
+    Student.find({}, function (err, data) {
+        res.send(data);
+    });
+})
 router.get('/asia', function (req, res) {
     console.log('asia')
     Student.find({}, function (err, data) {
@@ -108,11 +114,11 @@ router.post('/update', async (req, res) => {
 router.post('/delete', async function (req, res) {
     var email = req.body.email;
     console.log(email);
-    const filter = {email : email};
+    const filter = {email: email};
     const checkTT = await Student.findOne(filter);
     console.log(checkTT);
-    let xoa = await Student.deleteOne({_id:checkTT._id});
-    if (!xoa){
+    let xoa = await Student.deleteOne({_id: checkTT._id});
+    if (!xoa) {
         return console.log("Error");
     }
     console.log("Success");
